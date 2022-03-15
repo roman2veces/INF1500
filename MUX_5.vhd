@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
--- use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -35,9 +35,9 @@ entity MUX_5 is
     Port ( 
         A: in std_logic_vector(3 downto 0);
         B: in std_logic_vector(3 downto 0);
-        C: in std_logic_vector(4 downto 0);
-        D: in std_logic_vector(4 downto 0);
-        E: in std_logic_vector(4 downto 0);
+        ADD: in std_logic_vector(4 downto 0);
+        BIT_CPT: in std_logic_vector(4 downto 0);
+        BIT_PAR: in std_logic_vector(4 downto 0);
         SEL: in std_logic_vector(2 downto 0);
         S: out std_logic_vector(4 downto 0)
     );
@@ -49,9 +49,9 @@ begin
     with SEL select S <= 
         '0'&A when "000",
         '0'&B when "001",
-        C when "010", -- ADD
-        D when "011", -- BIT_CPT
-        E when "100", -- BIT_PAR
+        ADD when "010",
+        BIT_CPT when "011",
+        BIT_PAR when "100",
         "11111" when others;
     
 end FlotDeDonnees;
