@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+-- use IEEE.NUMERIC_STD.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -44,18 +44,14 @@ entity MUX_5 is
 end MUX_5;
 
 architecture FlotDeDonnees of MUX_5 is
-    signal A_5BITS: std_logic_vector(4 downto 0);
-    signal B_5BITS: std_logic_vector(4 downto 0);
-begin
-    A_5BITS <= "0" & A;
-    B_5BITS <= "0" & B;
-    
+
+begin    
     with SEL select S <= 
-    A_5BITS when "000",
-    B_5BITS when "001",
-    C when "010", -- ADD
-    D when "011", -- BIT_CPT
-    E when "100", -- BIT_PAR
-    "1111" when others;
+        '0'&A when "000",
+        '0'&B when "001",
+        C when "010", -- ADD
+        D when "011", -- BIT_CPT
+        E when "100", -- BIT_PAR
+        "11111" when others;
     
 end FlotDeDonnees;
