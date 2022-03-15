@@ -58,4 +58,3 @@ begin
    S <= to_unsigned(no_zeros_A + no_zeros_B, S'length);
     
 end FlotDeDonnees;
-
