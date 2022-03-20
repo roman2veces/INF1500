@@ -8,7 +8,7 @@ entity SEVEN_SEG is
         deuxieme_nombre: in UNSIGNED(3 downto 0);
         SEL: in UNSIGNED(2 downto 0);
         S: out UNSIGNED(7 downto 0);
-        AN: out UNSIGNED(7 downto 0);
+        AN: out UNSIGNED(7 downto 0)
     );
 end SEVEN_SEG;
 
