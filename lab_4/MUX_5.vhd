@@ -33,13 +33,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity MUX_5 is
     Port ( 
-        A: in std_logic_vector(3 downto 0);
-        B: in std_logic_vector(3 downto 0);
-        ADD: in std_logic_vector(4 downto 0);
-        BIT_CPT: in std_logic_vector(4 downto 0);
-        BIT_PAR: in std_logic_vector(4 downto 0);
-        SEL: in std_logic_vector(2 downto 0);
-        S: out std_logic_vector(4 downto 0)
+      A: in unsigned(3 downto 0);
+      B: in unsigned(3 downto 0);
+      ADD: in unsigned(4 downto 0);
+      BIT_CPT: in unsigned(4 downto 0);
+      BIT_PAR: in unsigned(4 downto 0);
+      SEL: in unsigned(2 downto 0);
+      S: out unsigned(4 downto 0)
     );
 end MUX_5;
 
