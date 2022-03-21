@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,15 +34,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity SEVEN_SEG_CONV is
     Port ( 
-        A : in std_logic_vector(4 downto 0);
-        S : out std_logic_vector(7 downto 0)
+        A : in unsigned(4 downto 0);
+        S : out unsigned(7 downto 0)
     );
 end SEVEN_SEG_CONV;
 
 architecture FlotDeDonnees of SEVEN_SEG_CONV is
 
-signal premiers_segs : std_logic_vector(6 downto 0);
-signal premiers_4b : std_logic_vector(3 downto 0);
+signal premiers_segs : unsigned(6 downto 0);
+signal premiers_4b : unsigned(3 downto 0);
+
 begin
 
     premiers_4b <= A(3) & A(2) & A(1) & A(0);
