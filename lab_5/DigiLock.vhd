@@ -89,22 +89,14 @@ begin
     --process (debounced_A, debounced_B, debounced_C) 
     process (A, B, C) 
     begin
+    -- TODO: Quoi faire quand il presse deux boutons au meme temps ? ajouter des and si besoin 
         if A = '1' then
             pressed_value <= "0001";
-        elsif A = '0' then
-            pressed_value <= "UUUU";
-        end if; 
-        
-        
-        if B = '1' then
+        elsif B = '1' then
             pressed_value <= "0010";
-        elsif B = '0' then
-            pressed_value <= "UUUU";
-        end if; 
-        
-        if C = '1' then
+        elsif C = '1' then 
             pressed_value <= "0011";
-        elsif C = '0' then
+        else 
             pressed_value <= "UUUU";
         end if; 
     end process;
