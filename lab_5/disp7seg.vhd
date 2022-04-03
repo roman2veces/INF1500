@@ -39,9 +39,9 @@ ENTITY DISP_7_SEG_LAB4 IS
     PORT (
         CLK :       IN STD_LOGIC;
         RST : IN STD_LOGIC;
-        A: IN STD_LOGIC;
-        B: IN STD_LOGIC;
-        C: IN STD_LOGIC;
+        button_A: IN STD_LOGIC;
+        button_B: IN STD_LOGIC;
+        button_C: IN STD_LOGIC;
      --   SEG_0 :     IN STD_LOGIC_VECTOR(3 downto 0);
      -- SEG_1 :     IN STD_LOGIC_VECTOR(3 downto 0);
      --   SEG_2 :     IN STD_LOGIC_VECTOR(3 downto 0);
@@ -55,7 +55,7 @@ ARCHITECTURE BEHAVE OF DISP_7_SEG_LAB4 IS
 
 SIGNAL TICK : STD_LOGIC;
 
-COMPONENT DigiLock is
+COMPONENT digilock is
     Port ( 
         clk: in std_logic;
         reset: in std_logic;
@@ -75,20 +75,18 @@ end COMPONENT;
     signal SEG_3 : STD_LOGIC_VECTOR(3 downto 0);
 
 BEGIN
-
-    U1: DigiLock port map(
+    U1: digilock port map(
         clk => clk, 
         reset => RST, 
-        A => A, 
-        B => B, 
-        C => C, 
+        A => button_A, 
+        B => button_B, 
+        C => button_C, 
         SEG0 => SEG_0,
         SEG1 => SEG_1,
         SEG2 => SEG_2,
         SEG3 => SEG_3 
     );
    
-
 	-- Frequency divider
 	PROCESS(CLK)
 	VARIABLE DIC_CNT : UNSIGNED(16 downto 0);
